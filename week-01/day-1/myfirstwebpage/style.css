@@ -1,0 +1,67 @@
+main {
+ padding: 50px 10%;
+ background-image:url(topography.png);
+ background-size: 500px 500px; 
+}
+
+
+
+header {
+ background-color: #333333;
+ margin: 0 0;
+}
+
+
+
+nav {
+ text-align: right;
+ font-family: 'Barlow Semi Condensed', sans-serif;
+ background-image: url(aparture.svg);
+ background-repeat: no-repeat;
+ background-position: left;
+}
+
+
+
+h3,
+a {
+ color: #ff0099;
+}
+
+
+a {
+    margin-right: 30px;
+    line-height: 50px;
+}
+
+
+
+h2 {
+ text-align: center;
+ font-size: 40px;
+}
+
+
+p {
+ margin: 10px 0 20px 0;
+ font-size: 25px;
+}
+
+
+
+h1{
+ font-size: 50px;
+}
+
+
+
+h3 {
+ font-size: 30px;
+ margin-bottom: 5px;
+}
+
+
+
+img {
+ margin-left: 150px;
+}
