@@ -1,0 +1,18 @@
+div {
+ background-color: rgb(14,145,161);
+ width: 445px;
+ height: 160px;
+ margin: 15px;
+ border-style: solid;
+ border-width: 5px;
+ border-color: rgb(125,206,148);
+ padding-top: 20px;
+ padding-left: 15px;
+}
+
+body {
+ color: rgb(0,85,102);
+ font-size: 36px;
+ font-weight: 200;
+ font-family: arial;
+}

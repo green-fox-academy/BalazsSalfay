@@ -1,0 +1,28 @@
+.godard {
+ background-color: rgb(230,118,118);
+ height: 260; 
+ width: 350;
+ margin-bottom: 5px;
+}
+
+.shaman {
+ background-color: rgb(169,230,230);
+ height: 260; 
+ width: 350;
+ margin-top: 5px;
+ }
+
+
+
+.wiz {
+ font-size: 36px;
+ font-family: 'Open Sans', sans-serif;
+ color: white;
+ text-align: center;
+ vertical-align: center; 
+ justify-content: center;
+ line-height: 260px;
+ border-style: solid;
+ border-width: 15px;
+ border-color: rgb(66,133,244);
+}
