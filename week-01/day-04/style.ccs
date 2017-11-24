@@ -1,4 +1,9 @@
 
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
 main {
  background-color: rgb(18,119,49);
  height: 900px;
@@ -14,7 +19,7 @@ main {
 }
 
 .box.top {
-  height: 30px;
+  height: 40px;
   width: 710px;
   margin-top: 10px;
   margin-left: 20px;
@@ -49,7 +54,6 @@ main {
 .personal-1 {
   height: 80px;
   width: 160px;
-  border: 1px solid black;
   float: left;
   margin-left: 10px;
 }
@@ -57,7 +61,6 @@ main {
 .personal-2 {
   height: 80px;
   width: 160px;
-  border: 1px solid black;
   float: right;
   margin-right: 10px;
 }
@@ -71,8 +74,13 @@ main {
 .personal-3 {
   height: 250px;
   width: 328px;
-  border: 1px solid black;
   clear: both;
   margin-left: 10px;
 
+}
+
+
+.box.top p {
+  font-size: 15px;
+  vertical-align: top;
 }
