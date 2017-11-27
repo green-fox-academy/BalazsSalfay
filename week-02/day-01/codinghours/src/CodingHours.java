@@ -5,10 +5,16 @@ public class CodingHours {
         int codingDays = 5;
 
         int attendeeCoding = (dailyCoding * codingDays) * semesterWeeks;
-            System.out.println(attendeeCoding);
-        
-        int avarageWorkHours = 52;
+        System.out.println(attendeeCoding);
 
+
+        float avarageWorkHours = 52f;
+
+
+        float avarageSemesterCoding = avarageWorkHours * semesterWeeks;
+
+        float percentageCodingHours = (attendeeCoding / avarageSemesterCoding) * 100;
+        System.out.println(percentageCodingHours);
 
     }
 }
