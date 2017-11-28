@@ -3,9 +3,13 @@ public class Swap {
         int a = 123;
         int b = 526;
 
+        int c = b;
+        b = a;
+        a = c;
 
-        a += (b - (b = a));
-        System.out.println("a = " + a + ", b = " + b);
+        System.out.println("a: " + a);
+        System.out.println("b: " + b);
+
 
 
     }
