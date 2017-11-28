@@ -27,7 +27,10 @@ public class VariableMutation {
 
         int e = 8;
         e = e * e * e;
+
         System.out.println(e);
+
+
 
 
 
