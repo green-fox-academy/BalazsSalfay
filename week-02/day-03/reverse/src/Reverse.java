@@ -1,14 +1,23 @@
+import java.util.Arrays;
+
 public class Reverse {
     public static void main(String[] args) {
 
         String reversed = ".eslaf eb t'ndluow ecnetnes siht ,dehctiws erew eslaf dna eurt fo sgninaem eht fI";
-        String fixed
+        reverse(reversed);
+
+
     }
     public static void reverse (String text) {
 
-        for (int i=0; i<text.length(); i++) {
 
+        char[] reversedChar = new char[text.length()];
+        String reversedText = String.valueOf(reversedChar);
+
+        for (int i=text.length()-1; i>=0; i--) {
+            reversedChar[i] = text.charAt(text.length()-i-1);
         }
+        System.out.println(reversedChar);
     }
 }
 
