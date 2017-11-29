@@ -5,7 +5,9 @@ public class PrintElement {
 
      int[] af = {4, 5, 6, 7};
 
-        System.out.println(Arrays.toString(af));
+     for (int i = 0; i < af.length; i++) {
+         System.out.println(af[i] + " ");
+        }
     }
 }
 
