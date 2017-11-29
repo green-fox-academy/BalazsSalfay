@@ -9,7 +9,7 @@ public class SumElements {
         int userNumber = input.nextInt();
 
         int result = sumelement(userNumber);
-        System.out.println("The sum of the number untill the number you gave: " + result);
+        System.out.println("The sum of the numbers till the number you gave: " + result);
 
 
     }
