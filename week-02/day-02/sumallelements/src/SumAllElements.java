@@ -5,12 +5,11 @@ public class SumAllElements {
 
         int[] ai = {3, 4, 5, 6, 7,};
 
-        //System.out.println(ai[0] + ai[1] + ai[2] + ai[3] + ai[4]);
-
+        int sum = 0;
         for (int i=0; i<ai.length; i++) {
-            ai[i] = ai[i];
+            sum += ai[i];
         }
-        System.out.println();
+        System.out.println(sum);
     }
 }
 
