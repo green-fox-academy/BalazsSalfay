@@ -20,7 +20,7 @@ public class PartyIndicator {
         if (girlsAndBoysEqual == true && girlsAndBoysTogether > 20 ) {
             System.out.println("The party is excellent!");
         } else if (girlsAndBoysTogether > 20 && girlsAndBoysEqual == false) {
-            System.out.println("Quiet cool party!");
+            System.out.println("Quite cool party!");
         } else if (girlsAndBoysTogether < 20) {
             System.out.println("Avarage party... ");
         } else if ( girlsNumber <= 0) {
