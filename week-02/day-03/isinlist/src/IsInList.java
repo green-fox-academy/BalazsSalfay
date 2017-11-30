@@ -6,7 +6,13 @@ public class IsInList {
 
     ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(2, 4, 6, 8, 10, 12, 14, 16));
 
-    if (list.containsAll())
+    ArrayList<Integer> doesItContain = new ArrayList<Integer>(Arrays.asList(4,8,12,16));
+
+    if (list.containsAll(doesItContain)) {
+      System.out.println("true");
+    } else {
+      System.out.println("false");
+    }
   }
 }
 

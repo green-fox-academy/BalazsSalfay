@@ -8,7 +8,9 @@ public class ElementFinder {
 
     if (arrayList.contains("7")) {
       System.out.println("Hoorray");
-    } else System.out.println("Noooooo");
+    } else {
+      System.out.println("Noooooo");
+    }
   }
 }
 
