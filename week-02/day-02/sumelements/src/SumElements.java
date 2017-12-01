@@ -1,26 +1,26 @@
 import java.util.Scanner;
 
 public class SumElements {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
 
-        System.out.println("Please give a number: ");
-        int userNumber = input.nextInt();
+    System.out.println("Please give a number: ");
+    int userNumber = input.nextInt();
 
-        int result = sumelement(userNumber);
-        System.out.println("The sum of the numbers till the number you gave: " + result);
+    int result = sumelement(userNumber);
+    System.out.println("The sum of the numbers till the number you gave: " + result);
 
+  }
 
+  public static int sumelement(int sumelem) {
+
+    int number = 0;
+    for (int i = 0; i < sumelem; i++) {
+      number += i;
     }
-    public static int sumelement (int sumelem) {
-
-        int number = 0;
-        for (int i=0; i<sumelem; i++){
-        number += i;
-        }
-        return number;
-    }
+    return number;
+  }
 }
 
 

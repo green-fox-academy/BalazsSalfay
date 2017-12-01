@@ -1,19 +1,23 @@
 public class Summing {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        sum();
-        System.out.println("The sum of the integers are :" + );
+    int givenNumber = 10;
+    int resultNumber = sum;
+    System.out.println("The sum of the integers are :" + givenNumber);
 
-    }
-    public static int sum (int resultOfSum){
+  }
+  public static int sum(int resultOfSum) {
 
-        int resultOfSum = 0;
+    int resultWillBe = 0;
 
-        for (int i=0; i<10; i++) {
-            resultOfSum += i;
-
-        }
-        return resultOfSum;
+    for (int i = 0; i < 10; i++) {
+      resultWillBe += i;
 
     }
+    return resultWillBe;
+
+  }
 }
+
+
+

@@ -12,8 +12,6 @@ public class PalindromeBuilder {
 
     createPalindrome(userInput);
 
-
-
   }
   public static void createPalindrome (String palinWord) {
 
@@ -22,7 +20,7 @@ public class PalindromeBuilder {
     for (int i = 0; i < palinWord.length(); i++) {
       palindromChar[i] = palinWord.charAt(palinWord.length() - i - 1);
     }
-    System.out.println(palinWord + String.valueOf(palindromChar));
+    System.out.println("Your plaindrome word is : " + palinWord + String.valueOf(palindromChar));
   }
 }
 
