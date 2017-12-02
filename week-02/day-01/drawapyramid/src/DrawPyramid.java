@@ -7,11 +7,17 @@ public class DrawPyramid {
     System.out.println("Plese give me a number, and I'll draw you a pyramid: " );
     int userInput = input.nextInt();
 
-    for (int i = 0; i < userInput; i++) {
-      for (int j = 0; j <= i; j++) {
+    int pyr = 0;
+
+    while (pyr < userInput){
+      for (int i = pyr; i < userInput; i++) {
+        System.out.print(" ");
+      }
+      for (int j = 0; j <(pyr * 2) ; j++) {
         System.out.print("*");
       }
       System.out.println("*");
+      pyr++;
     }
   }
 }
