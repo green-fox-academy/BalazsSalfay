@@ -1,12 +1,42 @@
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
 public class WriteMultipleLines {
 
   public static void main(String[] args) {
 
+    userInputsWriteInFile();
+
   }
 
-  public static void
-}
+  public static void userInputsWriteInFile() {
+    Path path = Paths.get("userfile.txt");
 
+    Scanner input = new Scanner(System.in);
+
+    System.out.println("Please give me a word: ");
+    String word = input.next();
+    System.out.println("Please give me a number: ");
+    int number = input.nextInt();
+
+    List<String> userInputs = new ArrayList<>();
+
+    try {
+      for (int i = 0; i < number; i++) {
+        userInputs.add(word);
+        Files.write(path, userInputs);
+      }
+      System.out.println(userInputs);
+    } catch (Exception e1) {
+
+    }
+  }
+}
 
 
 

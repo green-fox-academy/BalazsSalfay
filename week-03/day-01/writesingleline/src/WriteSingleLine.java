@@ -8,11 +8,10 @@ import java.util.List;
 public class WriteSingleLine {
 
   public static void main(String[] args) {
-
+    List<String> myName = new ArrayList<>();
+    myName.add("Balazs Salfay");
     try {
       Path path = Paths.get("my-file.txt");
-      List<String> myName = new ArrayList<>();
-      myName.add("Balazs Salfay");
       Files.write(path, myName);
     } catch (IOException e) {
       System.out.println("Unable to write fil: my-file.txt");
