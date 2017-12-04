@@ -2,7 +2,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,7 +10,6 @@ public class WriteMultipleLines {
   public static void main(String[] args) {
 
     userInputsWriteInFile();
-
   }
 
   public static void userInputsWriteInFile() {
@@ -25,7 +23,6 @@ public class WriteMultipleLines {
     int number = input.nextInt();
 
     List<String> userInputs = new ArrayList<>();
-
     try {
       for (int i = 0; i < number; i++) {
         userInputs.add(word);

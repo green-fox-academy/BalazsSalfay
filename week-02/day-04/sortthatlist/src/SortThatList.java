@@ -33,4 +33,3 @@ public class SortThatList {
 }
 
 
-//Should fix later, it's skip the first two userinput!
