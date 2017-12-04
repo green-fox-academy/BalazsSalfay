@@ -1,0 +1,7 @@
+This is
+a sample.
+It contains the
+meaning of life.
+42
+Demoletion after
+read.
