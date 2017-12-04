@@ -33,7 +33,7 @@ public class WriteMultipleLines {
       }
       System.out.println(userInputs);
     } catch (Exception e1) {
-
+      System.out.println("File can not be writen.");
     }
   }
 }
