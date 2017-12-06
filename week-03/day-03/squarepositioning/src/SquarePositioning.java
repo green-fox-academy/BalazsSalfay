@@ -1,24 +1,29 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.Random;
 
-public class Horizontal {
+public class SquarePositioning {
 
   public static void mainDraw(Graphics graphics){
-    // create a line drawing function that takes 2 parameters:
-    // the x and y coordinates of the line's starting point
-    // and draws a 50 long horizontal line from that point.
-    // draw 3 lines with that function.
-    int[] startPoint = {50,90};
-    drawHorizontals(graphics, startPoint);
+    // create a square drawing function that takes 2 parameters:
+    // the x and y coordinates of the square's top left corner
+    // and draws a 50x50 square from that point.
+    // draw 3 squares with that function.
+
+    int[] startPosition = {50, 70};
+    drawSquares(graphics,startPosition);
   }
-  public static void drawHorizontals(Graphics draw, int[] start) {
-    draw.setColor(Color.BLUE);
+
+  public static void drawSquares(Graphics draw, int[] start) {
+    Random rand = new Random();
+    draw.setColor(Color.ORANGE);
     for (int i = 0; i <= 2; i++) {
-      draw.drawLine(start[0],start[1],start[0] + 50,start[1]);
-      start[0] += 60;
-      start[1] += 50;
+      draw.fillRect(start[0], start[1], 50, 50);
+      start[0] += rand.nextInt(100);
+      start[1] += rand.nextInt(100);
     }
   }
+
 
   //    Don't touch the code below
   static int WIDTH = 320;
