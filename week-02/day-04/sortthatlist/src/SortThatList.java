@@ -11,7 +11,7 @@ public class SortThatList {
   }
 
   public static List<Integer> readUserInput() {
-    System.out.println("Please give a few number of your choice, and than type \"Go!\": ");
+    System.out.println("Please give a few number of your choice, and then type \"Go!\": ");
     Scanner input = new Scanner(System.in);
     ArrayList<Integer> userNumbers = new ArrayList<>();
 
