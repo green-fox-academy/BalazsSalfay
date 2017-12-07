@@ -4,7 +4,7 @@ public class Strings {
 
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    System.out.println("Please write me some text which is contain \"x\" characters: ");
+    System.out.println("Please write me some text which is contains \"x\" characters: ");
     String xToY = input.next();
     System.out.println(charChanger(xToY));
   }
