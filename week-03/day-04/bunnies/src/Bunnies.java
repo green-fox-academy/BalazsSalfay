@@ -4,7 +4,7 @@ public class Bunnies {
 
   public static void main(String[] args) {
     Random rand = new Random();
-    int numberOfBunnies = rand.nextInt(500);
+    int numberOfBunnies = rand.nextInt(100);
     int numberOfEars = 2;
     System.out.println(bunniesEarsCounter(numberOfBunnies,numberOfEars));
   }
@@ -13,7 +13,7 @@ public class Bunnies {
     if (e == 0 || b == 0) {
       return 0;
     } else {
-      return  + bunniesEarsCounter(b, e - 1);
+      return b  + bunniesEarsCounter(b, e - 1);
     }
   }
 }

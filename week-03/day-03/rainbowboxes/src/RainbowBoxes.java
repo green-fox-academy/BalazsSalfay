@@ -17,9 +17,9 @@ public class RainbowBoxes {
   }
 
   public static void boxDrawing(Graphics draw, int size, int[] color) {
-      Random position = new Random();
-      draw.setColor(new Color(color[0],color[1],color[2]));
-      draw.fillRect(position.nextInt(270), position.nextInt(293), size, size);
+    Random position = new Random();
+    draw.setColor(new Color(color[0],color[1],color[2]));
+    draw.fillRect(position.nextInt(270), position.nextInt(293), size, size);
   }
 
   public static int[] randomColor() {

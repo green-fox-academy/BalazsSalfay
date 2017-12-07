@@ -1,14 +1,13 @@
 public class NumberAdder {
 
   public static void main(String[] args) {
-
     int countUntilThis = 8;
     System.out.println(numberAdder(countUntilThis));
   }
 
   public static int numberAdder(int n) {
     if (n == 0) {
-      return 1;
+      return 0;
     } else {
       return (n + numberAdder(n-1));
     }
