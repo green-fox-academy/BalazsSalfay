@@ -9,7 +9,7 @@ public class NumberAdder {
     if (n == 0) {
       return 0;
     } else {
-      return (n + numberAdder(n-1));
+      return n + numberAdder(n-1);
     }
   }
 }
