@@ -1,8 +1,8 @@
 public class PostIt {
 
-  String backgroundColor;
-  String text;
-  String textColor;
+  private String backgroundColor;
+  private String text;
+  private String textColor;
 
   public PostIt(String backgroundColor, String text, String textColor) {
     this.backgroundColor = backgroundColor;
