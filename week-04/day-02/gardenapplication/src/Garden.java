@@ -4,23 +4,40 @@ import java.util.List;
 public class Garden {
 
   public static void main(String[] args) {
+    int wateringWith = 40;
+    int wateringWith2 = 70;
     List<Plant> garden = new ArrayList<Plant>();
 
-    Plant yellow = new Flower("yellow",4 );
+    Plant yellow = new Flower("yellow",0 );
     garden.add(yellow);
     System.out.println(yellow.toString());
-    Plant blue = new Flower("blue", 2);
+    Plant blue = new Flower("blue", 0);
     garden.add(blue);
     System.out.println(blue.toString());
-    Plant purple = new Tree("purple", 8);
+    Plant purple = new Tree("purple", 0);
     garden.add(purple);
     System.out.println(purple.toString());
-    Plant orange = new Tree("orange", 12);
+    Plant orange = new Tree("orange", 0);
     garden.add(orange);
     System.out.println(orange.toString());
+    System.out.println("");
 
-    watering(40,garden);
-    System.out.println(yellow.waterAmount);
+    watering(40, garden);
+
+    System.out.println("Watering with " + wateringWith);
+    System.out.println(yellow.toString());
+    System.out.println(blue.toString());
+    System.out.println(purple.toString());
+    System.out.println(orange.toString());
+    System.out.println("");
+
+    watering(70, garden);
+
+    System.out.println("Watering with " + wateringWith2);
+    System.out.println(yellow.toString());
+    System.out.println(blue.toString());
+    System.out.println(purple.toString());
+    System.out.println(orange.toString());
   }
 
   public static int howManyPlatsAreThirsty( List<Plant> plants) {
@@ -33,10 +50,14 @@ public class Garden {
   }
 
   public static void watering(int addWater, List<Plant> plants) {
-    int newWaterAmount = addWater / howManyPlatsAreThirsty(plants);
+    double newWaterAmount = addWater / howManyPlatsAreThirsty(plants);
     for (Plant currentPlant: plants) {
       if (currentPlant.checkTheState()) {
-        currentPlant.waterAmount = currentPlant.waterAmount + newWaterAmount;
+        if (currentPlant.name == "Flower") {
+          currentPlant.waterAmount = currentPlant.waterAmount + (int) (newWaterAmount * 0.75);
+        } else if (currentPlant.name == "Tree") {
+          currentPlant.waterAmount = currentPlant.waterAmount + (int) (newWaterAmount * 0.4);
+        }
       }
     }
   }

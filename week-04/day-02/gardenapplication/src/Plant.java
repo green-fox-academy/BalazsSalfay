@@ -12,7 +12,6 @@ public class Plant {
     this.waterAmount = waterAmount;
   }
 
-
   public String getColor() {
     return color;
   }
