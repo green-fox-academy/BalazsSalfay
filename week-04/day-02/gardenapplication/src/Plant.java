@@ -29,10 +29,4 @@ public class Plant {
   public boolean checkTheState() {
     return needWater;
   }
-
-  public void watering(int addWater) {
-    if (checkTheState()) {
-      addWater / 
-    }
-  }
 }
