@@ -15,5 +15,4 @@ public class Hero extends GameCharacter {
   public void heroturnUp() {
     setImagePath("hero-up.png");
   }
-
 }
