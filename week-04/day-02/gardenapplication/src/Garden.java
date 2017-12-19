@@ -53,9 +53,9 @@ public class Garden {
     double newWaterAmount = addWater / howManyPlatsAreThirsty(plants);
     for (Plant currentPlant: plants) {
       if (currentPlant.checkTheState()) {
-        if (currentPlant.name == "Flower") {
+        if (currentPlant.name.equals("Flower")) {
           currentPlant.waterAmount = currentPlant.waterAmount + (int) (newWaterAmount * 0.75);
-        } else if (currentPlant.name == "Tree") {
+        } else if (currentPlant.name.equals("Tree")) {
           currentPlant.waterAmount = currentPlant.waterAmount + (int) (newWaterAmount * 0.4);
         }
       }
