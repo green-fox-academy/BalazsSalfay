@@ -3,3 +3,5 @@ monkey
 elephant
 donkey
 zebra
+alpaca
+pig

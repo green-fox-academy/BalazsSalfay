@@ -26,7 +26,7 @@ public class Functions {
       try {
         Files.write(filePath, animalList);
       } catch (Exception e) {
-        System.out.println("Unable to write file: todo.txt");
+        System.out.println("Unable to write file: favourites.txt");
       }
     }
   }
