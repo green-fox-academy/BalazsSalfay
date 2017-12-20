@@ -7,6 +7,5 @@ public class Lollipop extends Sweet {
   public Lollipop() {
     priceDollar = 10;
     sugarGramm = 5;
-
   }
 }

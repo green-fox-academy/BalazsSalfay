@@ -8,22 +8,22 @@ public class Sweet {
     this.sugarGramm = sugarGramm;
   }
 
-  public double getPriceDollar() {
-    return priceDollar;
+  public Sweet() {
   }
 
-  public void setPriceDollar(double priceDollar) {
-    this.priceDollar = priceDollar;
+  public double getPriceDollar() {
+    return priceDollar;
   }
 
   public int getSugarGramm() {
     return sugarGramm;
   }
 
-  public void setSugarGramm(int sugarGramm) {
-    this.sugarGramm = sugarGramm;
+  public void setPriceDollar(double priceDollar) {
+    this.priceDollar = priceDollar;
   }
 
-  public Sweet() {
+  public void setSugarGramm(int sugarGramm) {
+    this.sugarGramm = sugarGramm;
   }
 }

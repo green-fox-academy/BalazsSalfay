@@ -3,7 +3,7 @@ import java.util.List;
 
 public class CandyShop {
 
-  protected int shopSugerGramm;
+  protected int shopSugarGramm;
   protected double incomeDollar;
   private static final double SUGARPRICE_1GR = 0.1;
   private int candyAmount;
@@ -13,12 +13,12 @@ public class CandyShop {
   protected static final Lollipop LOLLIPOP = new Lollipop();
 
   public CandyShop(int shopSugerGramm) {
-    this.shopSugerGramm = shopSugerGramm;
+    this.shopSugarGramm = shopSugerGramm;
   }
 
   public void createSweets(Sweet sweet) {
     storage.add(sweet);
-    shopSugerGramm -= sweet.sugarGramm;
+    shopSugarGramm -= sweet.sugarGramm;
     if (sweet == CANDY) {
       candyAmount++;
     } else {
@@ -32,7 +32,7 @@ public class CandyShop {
   }
 
   public void buySugar(int sugarAmount) {
-    shopSugerGramm += sugarAmount;
+    shopSugarGramm += sugarAmount;
     incomeDollar = incomeDollar - (sugarAmount * SUGARPRICE_1GR);
   }
 
@@ -55,6 +55,6 @@ public class CandyShop {
   @Override
   public String toString() {
     return "Inventory: " + candyAmount + " candies, " + lollipopAmount + " lollipops, " + "Income: " +
-            incomeDollar + "$" + ", Sugar: " + shopSugerGramm + "gr";
+            incomeDollar + "$" + ", Sugar: " + shopSugarGramm + "gr";
   }
 }
