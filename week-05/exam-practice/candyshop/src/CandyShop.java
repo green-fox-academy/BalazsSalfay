@@ -9,8 +9,8 @@ public class CandyShop {
   private int candyAmount;
   private int lollipopAmount;
   List<Sweet> storage = new ArrayList<>();
-  protected static final Candy CANDY = new Candy();
-  protected static final Lollipop LOLLIPOP = new Lollipop();
+  protected final static Candy CANDY = new Candy();
+  protected final static Lollipop LOLLIPOP = new Lollipop();
 
   public CandyShop(int shopSugerGramm) {
     this.shopSugarGramm = shopSugerGramm;
