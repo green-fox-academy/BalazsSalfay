@@ -14,5 +14,6 @@ public class Main {
     dominoes.add(new Domino(7, 1));
 
     Collections.sort(dominoes);
+    System.out.println(dominoes);
   }
 }
