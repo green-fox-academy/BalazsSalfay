@@ -4,6 +4,11 @@ public class Plant {
   protected int waterAmount;
   protected boolean needWater;
 
+  public Plant(String color, int waterAmount) {
+    this.color = color;
+    this.waterAmount = waterAmount;
+  }
+
   public void setColor(String color) {
     this.color = color;
   }
@@ -18,11 +23,6 @@ public class Plant {
 
   public int getWaterAmount() {
     return waterAmount;
-  }
-
-  public Plant(String color, int waterAmount) {
-    this.color = color;
-    this.waterAmount = waterAmount;
   }
 
   public boolean checkTheState() {
