@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<span th:text="'This is an <em>HTML</em> text. <b>Enjoy yourself!</b>'"/>
-<span th:utext="'This is an <em>HTML</em> text. <b>Enjoy yourself!</b>'"/>
+<p th:text="'This is an' + ${format1} + 'text.' + ${format2}"/>
+<p th:utext="'This is an ' + ${format1} + ' text. ' + ${format2}"/>
 </body>
 </html>
