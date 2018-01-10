@@ -10,8 +10,14 @@ import java.util.List;
 
 @Controller
 public class ShowWebController {
-  BankAccount firstAccount = new BankAccount("Simba", 2000.00, "lion");
-  List<BankAccount> accounts = new ArrayList<>();
+
+  private List<BankAccount> accounts = new ArrayList<>();
+  private BankAccount firstAccount = new BankAccount("Simba", 2000.00, "lion");
+  private BankAccount secondAccount = new BankAccount("Zazu", 3500.00, "bird");
+  private BankAccount thirdAccount = new BankAccount("Zordon", 6200.00, "lion");
+  private BankAccount fourthAccount = new BankAccount("Timon", 2900.00, "meerkat");
+  private BankAccount fifthAccount = new BankAccount("Pumba", 4700.00, "pig");
+
 
   @RequestMapping (value="/oneaccount")
   public String showingAnAccount (Model model) {
@@ -31,7 +37,12 @@ public class ShowWebController {
 
   @RequestMapping(value="/multiaccounts")
   public String showMultiAccount (Model model) {
-
+    accounts.add(firstAccount);
+    accounts.add(secondAccount);
+    accounts.add(thirdAccount);
+    accounts.add(fourthAccount);
+    accounts.add(fifthAccount);
+    model.addAttribute("accounts", accounts);
     return "listaccount";
   }
 }
