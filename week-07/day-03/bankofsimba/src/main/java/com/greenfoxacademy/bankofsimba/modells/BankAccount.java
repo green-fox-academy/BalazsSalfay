@@ -7,12 +7,14 @@ public class BankAccount {
   private String animalType;
   private String currency;
   private boolean King;
+  private char goodOrBad;
 
-  public BankAccount(String name, double balance, String animalType, boolean King) {
+  public BankAccount(String name, double balance, String animalType, boolean King, char goodOrBad) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
     this.King = King;
+    this.goodOrBad = goodOrBad;
     currency = "Zebra";
   }
 
@@ -54,5 +56,13 @@ public class BankAccount {
 
   public void setKing(boolean king) {
     King = king;
+  }
+
+  public char getGoodOrBad() {
+    return goodOrBad;
+  }
+
+  public void setGoodOrBad(char goodOrBad) {
+    this.goodOrBad = goodOrBad;
   }
 }

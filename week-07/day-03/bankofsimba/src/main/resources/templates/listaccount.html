@@ -12,13 +12,21 @@
     <th>Balance</th>
     <th>Type</th>
     <th>King?</th>
+    <th>Good Or Bad?</th>
   </tr>
   <tr th:each="account: ${accounts}">
     <td align="center" th:text="${accountStat.index}" />
     <td align="center" th:text="${account.name}" />
     <td align="center" th:text="${#numbers.formatDecimal(account.balance, 4, 2, 'POINT')}" />
     <td align="center" th:text="${account.animalType}" />
-    <td align="center" th:if="${account.King} == true" th:style="'background-color:orange;'" th:text="'king'"  />
+    <td align="center">
+        <span th:if="${account.King} == true" th:style="'background-color:orange;'" th:text="'king'" />
+        <span th:unless="${account.King} == true" th:text="' '" />
+    </td>
+    <td align="center" th:switch="${account.goodOrBad}">
+          <span th:case="'G'" th:text="'Good One'" />
+          <span th:case="'B'" th:text="'Bad Guy'" />
+    </td>
   </tr>
 </table>
 </body>

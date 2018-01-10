@@ -13,11 +13,11 @@ import java.util.List;
 public class ShowWebController {
 
   private List<BankAccount> accounts = new ArrayList<BankAccount>(Arrays.asList(
-          new BankAccount("Simba", 2000.00, "lion", true),
-          new BankAccount("Zazu", 3500.00, "bird", false),
-          new BankAccount("Zordon", 6200.00, "lion", true),
-          new BankAccount("Timon", 2900.00, "meerkat", false),
-          new BankAccount("Pumba", 4700.00, "warthog", false)
+          new BankAccount("Simba", 2000.00, "lion", true, 'G'),
+          new BankAccount("Zazu", 3500.00, "bird", false, 'G'),
+          new BankAccount("Zordon", 6200.00, "lion", true, 'B'),
+          new BankAccount("Timon", 2900.00, "meerkat", false, 'G'),
+          new BankAccount("Pumba", 4700.00, "warthog", false, 'G')
   ));
   @RequestMapping (value="/oneaccount")
   public String showingAnAccount (Model model) {
