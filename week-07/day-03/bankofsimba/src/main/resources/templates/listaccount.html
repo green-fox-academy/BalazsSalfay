@@ -6,12 +6,20 @@
 </head>
 <body>
 <table style="width:50%">
-<tr th:each="account: ${accounts}">
-    <td th:text="${accountStat.index}" />
-    <td th:text="${account.name}" />
-    <td th:text="${#numbers.formatDecimal(account.balance, 4, 2, 'POINT')}" />
-    <td th:text="${account.animalType}" />
-</tr>
+  <tr>
+    <th>Index</th>
+    <th>Name</th>
+    <th>Balance</th>
+    <th>Type</th>
+    <th>King?</th>
+  </tr>
+  <tr th:each="account: ${accounts}">
+    <td align="center" th:text="${accountStat.index}" />
+    <td align="center" th:text="${account.name}" />
+    <td align="center" th:text="${#numbers.formatDecimal(account.balance, 4, 2, 'POINT')}" />
+    <td align="center" th:text="${account.animalType}" />
+    <td align="center" th:if="${account.King} == true" th:style="'background-color:orange;'" th:text="'king'"  />
+  </tr>
 </table>
 </body>
 </html>

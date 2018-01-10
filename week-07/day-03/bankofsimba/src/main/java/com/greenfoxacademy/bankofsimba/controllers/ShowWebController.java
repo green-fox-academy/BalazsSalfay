@@ -6,25 +6,25 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
 public class ShowWebController {
 
-  private List<BankAccount> accounts = new ArrayList<>();
-  private BankAccount firstAccount = new BankAccount("Simba", 2000.00, "lion");
-  private BankAccount secondAccount = new BankAccount("Zazu", 3500.00, "bird");
-  private BankAccount thirdAccount = new BankAccount("Zordon", 6200.00, "lion");
-  private BankAccount fourthAccount = new BankAccount("Timon", 2900.00, "meerkat");
-  private BankAccount fifthAccount = new BankAccount("Pumba", 4700.00, "pig");
-
-
+  private List<BankAccount> accounts = new ArrayList<BankAccount>(Arrays.asList(
+          new BankAccount("Simba", 2000.00, "lion", true),
+          new BankAccount("Zazu", 3500.00, "bird", false),
+          new BankAccount("Zordon", 6200.00, "lion", true),
+          new BankAccount("Timon", 2900.00, "meerkat", false),
+          new BankAccount("Pumba", 4700.00, "warthog", false)
+  ));
   @RequestMapping (value="/oneaccount")
   public String showingAnAccount (Model model) {
-    model.addAttribute("name", firstAccount.getName());
-    model.addAttribute("balance", firstAccount.getBalance());
-    model.addAttribute("currency", firstAccount.getCurrency());
-    model.addAttribute("animalType", firstAccount.getAnimalType());
+    model.addAttribute("name", accounts.get(0).getName());
+    model.addAttribute("balance", accounts.get(0).getBalance());
+    model.addAttribute("currency", accounts.get(0).getCurrency());
+    model.addAttribute("animalType", accounts.get(0).getAnimalType());
     return "account";
   }
 
@@ -37,11 +37,6 @@ public class ShowWebController {
 
   @RequestMapping(value="/multiaccounts")
   public String showMultiAccount (Model model) {
-    accounts.add(firstAccount);
-    accounts.add(secondAccount);
-    accounts.add(thirdAccount);
-    accounts.add(fourthAccount);
-    accounts.add(fifthAccount);
     model.addAttribute("accounts", accounts);
     return "listaccount";
   }
