@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<table style="width:50%; height:300px; font-size: large">
+    <tr style="background-color:goldenrod">
+        <th>Index</th>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Type</th>
+        <th>King?</th>
+        <th>Good Or Bad?</th>
+    </tr>
+    <tr style="background-color:lightblue;" align="center" th:each="account: ${accounts}">
+        <td th:text="${accountStat.index}" />
+        <td th:text="${account.name}" />
+        <td th:text="${#numbers.formatDecimal(account.balance, 4, 2, 'POINT')} + ' ' + ${account.currency}" />
+        <td th:text="${account.animalType}" />
+        <td style="background-color:orange" th:if="${account.King} == true" th:text="'King'" />
+        <td th:unless="${account.King} == true" th:text="' '" />
+        <td th:switch="${account.goodOrBad}">
+            <span th:case="'G'" th:text="'Good One'" />
+            <span th:case="'B'" style="background-color: red" th:text="'Bad Guy'" />
+        </td>
+    </tr>
+</table>
+</body>
+</html>
