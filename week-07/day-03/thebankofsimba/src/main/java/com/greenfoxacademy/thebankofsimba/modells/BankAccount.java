@@ -6,14 +6,14 @@ public class BankAccount {
   private double balance;
   private String animalType;
   private String currency;
-  private boolean King;
+  private boolean king;
   private char goodOrBad;
 
-  public BankAccount(String name, double balance, String animalType, boolean King, char goodOrBad) {
+  public BankAccount(String name, double balance, String animalType, boolean king, char goodOrBad) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
-    this.King = King;
+    this.king = king;
     this.goodOrBad = goodOrBad;
     currency = "Zebra";
   }
@@ -51,11 +51,11 @@ public class BankAccount {
   }
 
   public boolean getKing() {
-    return King;
+    return king;
   }
 
   public void setKing(boolean king) {
-    King = king;
+    king = king;
   }
 
   public char getGoodOrBad() {
