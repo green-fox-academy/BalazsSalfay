@@ -5,7 +5,8 @@ import com.greenfoxacademy.thebankofsimba.factories.BankAccountFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,32 +19,27 @@ public class ShowAccountController {
   @Autowired
   public ShowAccountController(BankAccountFactory bankAccounts) {
     accounts = Arrays.asList(
-            bankAccounts.getBankAccount("Simba", 8100.00, "lion", true, 'G'),
-            bankAccounts.getBankAccount("Zazu", 3500.00, "bird", false, 'G'),
-            bankAccounts.getBankAccount("Zordon", 6200.00, "lion", true, 'B'),
-            bankAccounts.getBankAccount("Timon", 2900.00, "meerkat", false, 'G'),
-            bankAccounts.getBankAccount("Pumba", 4700.00, "warthog", false, 'G'));
+      bankAccounts.getBankAccount("Robert", 8100.00, "Baratheon", true, 'Y', true),
+      bankAccounts.getBankAccount("Tyrion", 9600.00, "Lannister", false, 'N', false),
+      bankAccounts.getBankAccount("Oberyn", 3200.00, "Martell", false, 'Y', true),
+      bankAccounts.getBankAccount("Daenerys", 4800.00, "Targaryen", true, 'Y', false),
+      bankAccounts.getBankAccount("Eddard", 2750.00, "Stark", false, 'Y', true));
   }
 
-  @RequestMapping(value="/multiaccounts")
-  public String showMultiAccount (Model model) {
+  @RequestMapping(value="/multiaccounts", method = RequestMethod.GET)
+  public String showMultiAccount(Model model) {
     model.addAttribute("accounts", accounts);
+    model.addAttribute("selectedaccount", new BankAccount());
     return "listofaccounts";
   }
 
-  @RequestMapping (value="/oneaccount")
-  public String showingAnAccount (Model model) {
-    model.addAttribute("name", accounts.get(0).getName());
-    model.addAttribute("balance", accounts.get(0).getBalance());
-    model.addAttribute("currency", accounts.get(0).getCurrency());
-    model.addAttribute("animalType", accounts.get(0).getAnimalType());
-    return "account";
-  }
-
-  @RequestMapping(value="/exception")
-  public String showException (Model model) {
-    model.addAttribute("format1", "<em>HTML</em>");
-    model.addAttribute("format2","<b>Enjoy yourself!</b>");
-    return "except";
+  @PostMapping("/multiaccounts")
+  public ModelAndView modifySelectedElement(@ModelAttribute BankAccount selectedAccount){
+    for (BankAccount account: accounts) {
+      if (account.getName().equals(selectedAccount.getName())) {
+        account.getLoan();
+      }
+    }
+    return new ModelAndView("redirect:/multiaccounts");
   }
 }

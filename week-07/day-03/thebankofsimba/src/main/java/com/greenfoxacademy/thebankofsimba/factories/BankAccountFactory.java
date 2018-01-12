@@ -6,7 +6,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class BankAccountFactory {
 
-  public BankAccount getBankAccount(String name, double balance, String animalType, boolean king, char goodOrBad) {
-    return new BankAccount(name, balance, animalType, king, goodOrBad);
+  public BankAccount getBankAccount(String name,
+                                    double balance,
+                                    String greatHouse,
+                                    boolean king,
+                                    char debt,
+                                    boolean dead) {
+    return new BankAccount(name, balance, greatHouse, king, debt, dead);
   }
 }

@@ -1,38 +1,46 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>The bank of Lion King</title>
+    <title>Iron Bank of Bravoos</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
 <table style="width:50%; height:300px; font-size: large">
- <tr style="background-color: goldenrod">
+ <tr style="background-color:crimson">
    <th>Index</th>
    <th>Name</th>
    <th>Balance</th>
-   <th>Type</th>
+   <th>Great House</th>
    <th>Ruler?</th>
-   <th>Good Or Bad?</th>
+   <th>Has debt?</th>
+   <th>Dead or Alive</th>
  </tr>
- <tr style="background-color:lightblue;" align="center" th:each="account: ${accounts}">
-   <td th:text="${accountStat.count}" />
+ <tr style="background-color:darkgray;" align="center" th:each="account: ${accounts}">
+   <td style="color:oldlace" th:text="${accountStat.count}" />
    <td th:text="${account.name}" />
    <td th:text="${#numbers.formatDecimal(account.balance, 4, 2, 'POINT')} + ' ' + ${account.currency}" />
-   <td th:text="${account.animalType}" />
-   <td style="background-color:orange" th:if="${account.king} == true" th:text="'King'" />
+   <td th:text="${account.greatHouse}" />
+   <td style="background-color:floralwhite" th:if="${account.king} == true" th:text="'King'" />
    <td th:unless="${account.king} == true" th:text="' '" />
-   <td th:switch="${account.goodOrBad}">
-     <span th:case="'G'" th:text="'Good One'" />
-     <span th:case="'B'" style="font-family:'Comic Sans MS' " th:text="'Bad Guy'" />
+   <td th:switch="${account.debt}">
+     <span th:case="'Y'" th:text="'Yes...'" />
+     <span style="color:crimson; font-weight:bold;" th:case="'N'" th:text="'NO!'" />
    </td>
+   <td th:switch="${account.dead}">
+     <span style="color:oldlace" th:case='true' th:text="'Dead'" />
+     <span style="color:oldlace" th:case='false' th:text="'Still alive'" />
+   </td>
+   <td></td>
  </tr>
 </table>
-<h3 style="font-style: oblique" th:text="'You can raise here the balance of the account:'"></h3>
-<select th:field="*{accounts}">
+<form action="#" th:object="${selectedaccount}" th:action="@{'/multiaccounts'}" method="post">
+  <select th:field="*{name}">
     <option th:each="account: ${accounts}"
             th:value="${account.name}"
             th:text="${account.name}" />
-</select>
-<button type="submit" value="Raise" >Raise</button>
+  </select>
+  <button type="submit" value="Loan" >Loan, I got the consequences</button>
+</form>
+<h3 style="font-style: oblique" th:text="'I kindly ask the Iron Bank to help me with a loan for the Great War!'"></h3>
 </body>
 </html>
