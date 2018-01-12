@@ -20,7 +20,7 @@
    <td th:text="${account.name}" />
    <td th:text="${#numbers.formatDecimal(account.balance, 4, 2, 'POINT')} + ' ' + ${account.currency}" />
    <td th:text="${account.greatHouse}" />
-   <td style="background-color:floralwhite" th:if="${account.king} == true" th:text="'King'" />
+   <td style="background-color:floralwhite; font-weight:bold" th:if="${account.king} == true" th:text="'King'" />
    <td th:unless="${account.king} == true" th:text="' '" />
    <td th:switch="${account.debt}">
      <span th:case="'Y'" th:text="'Yes...'" />
