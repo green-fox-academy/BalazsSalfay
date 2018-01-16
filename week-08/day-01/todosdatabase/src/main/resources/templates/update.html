@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
+    <title>Arya Stark's Death List</title>
+</head>
+<body>
+<h2>Updating my death list</h2>
+    <form action="#" th:action="@{/candidate/update/} + ${candidate.id}" th:object="${candidate}" method="post">
+        <div class="form-group">
+            <label th:field="${id}" th:text="${id}"></label>
+        </div>
+        <div class="form-group">
+          <label for="applicant_name">Name:</label>
+          <input class="form-control" id="applicant_name" type="text" th:field="*{name}" />
+        </div>
+        <div class="form-group">
+          <label for="isUrgent">Is it urgent?</label>
+          <input id="isUrgent" type="checkbox" th:field="*{isUrgent}"/>
+        </div>
+        <div class="form-group">
+            <label for="isDone">Is it done?</label>
+            <input id="isDone" type="checkbox" th:field="*{isDone}"/>
+        </div>
+        <div>
+            <input class="btn btn-info" type="submit" value="Update" />
+        </div>
+    </form>
+</body>
+</html>

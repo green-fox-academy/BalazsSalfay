@@ -6,20 +6,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Todo {
+public class Candidate {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private int id;
-  private String title;
+  private String name;
   private boolean isUrgent;
   private boolean isDone;
 
-  public Todo() {
+  public Candidate() {
   }
 
-  public Todo(String title, boolean isUrgent, boolean isDone) {
-    this.title = title;
+  public Candidate(String name, boolean isUrgent, boolean isDone) {
+    this.name = name;
     this.isUrgent = isUrgent;
     this.isDone = isDone;
   }
@@ -32,12 +32,12 @@ public class Todo {
     this.id = id;
   }
 
-  public String getTitle() {
-    return title;
+  public String getName() {
+    return name;
   }
 
-  public void setTitle(String title) {
-    this.title = title;
+  public void setName(String name) {
+    this.name = name;
   }
 
   public boolean getIsUrgent() {
