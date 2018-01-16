@@ -15,7 +15,7 @@
    <th>Has debt?</th>
    <th>Dead or Alive</th>
  </tr>
- <tr style="background-color:darkgray;" align="center" th:each="account: ${accounts}">
+ <tr style="background-color:darkgray" align="center" th:each="account: ${accounts}">
    <td style="color:oldlace" th:text="${accountStat.count}" />
    <td th:text="${account.name}" />
    <td th:text="${#numbers.formatDecimal(account.balance, 4, 2, 'POINT')} + ' ' + ${account.currency}" />
@@ -30,7 +30,6 @@
      <span style="color:oldlace" th:case='true' th:text="'Dead'" />
      <span style="color:oldlace" th:case='false' th:text="'Still alive'" />
    </td>
-   <td></td>
  </tr>
 </table>
 <form action="#" th:object="${selectedaccount}" th:action="@{'/multiaccounts'}" method="post">
