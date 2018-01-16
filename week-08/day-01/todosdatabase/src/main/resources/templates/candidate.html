@@ -5,7 +5,7 @@
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
  <title>Arya Stark's Death List</title>
 </head>
-<body>
+<body style="margin: 0px 20px;">
 <h1 align="center">Arya Stark's Death List</h1>
 <h3 align="center">I am gonna kill: </h3>
 <div class="table-responsive">
@@ -50,7 +50,7 @@
  <form action="#" th:action="@{/candidate/create}" th:object="${newCandidate}" method="post">
     <input type="hidden" th:field="*{id}"/>
     <div class="form-group">
-    <input  class="form-control" placeholder="Enter the name of your new candidate" type="text" th:field="*{name}"/>
+    <input style="width:30%;"  class="form-control" placeholder="Enter the name of your new candidate" type="text" th:field="*{name}"/>
     </div>
     <div>
     <label for="isUrgent">Is it urgent?</label>
