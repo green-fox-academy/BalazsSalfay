@@ -5,26 +5,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
     <title>Arya Stark's Death List</title>
 </head>
-<body style="margin: 0px 20px;">
-<h2>Updating my death list</h2>
+<body style="margin: 10px 20px; background-image: url(https://wallpaperscraft.com/image/game_of_thrones_maisie_williams_arya_stark_94598_2560x1440.jpg)">
+<h2 style="font-family:'OCR A Std'; color: ghostwhite">Updating my death list</h2>
     <form action="#" th:action="@{/candidate/update/} + ${candidate.id}" th:object="${candidate}" method="post">
         <div class="form-group">
             <label th:field="${id}" th:text="${id}"></label>
         </div>
         <div class="form-group">
-          <label for="applicant_name">Name:</label>
+          <label for="applicant_name" style="font-family:'OCR A Std'; color: ghostwhite">Name:</label>
           <input style="width:30%;" class="form-control" id="applicant_name" type="text" th:field="*{name}" />
         </div>
         <div class="form-group">
-          <label for="isUrgent">Is it urgent?</label>
+          <label for="isUrgent" style="font-family:'OCR A Std'; color: ghostwhite">Is it urgent?</label>
           <input id="isUrgent" type="checkbox" th:field="*{isUrgent}"/>
         </div>
         <div class="form-group">
-            <label for="isDone">Is it done?</label>
+            <label for="isDone" style="font-family:'OCR A Std'; color: ghostwhite">Is it done?</label>
             <input id="isDone" type="checkbox" th:field="*{isDone}"/>
         </div>
         <div>
-            <input class="btn btn-info" type="submit" value="Update" />
+            <input style="font-family:'OCR A Std'" class="btn btn-warning" type="submit" value="Update" />
         </div>
     </form>
 </body>
