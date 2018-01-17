@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
+    <title>Arya Stark's Death List</title>
+</head>
+<body style="margin: 10% 15%; background-image: url(https://wallpaperscraft.com/image/game_of_thrones_maisie_williams_arya_stark_94598_2560x1440.jpg)">
+<h2 align="center" style="font-family:'OCR A Std'; color: ghostwhite">Only available for the chosen ones</h2>
+<form action="#" th:action="@{/candidate/login}" th:object="${user}" method="post">
+    <div align="center" class="form-group">
+        <label style="font-family:'OCR A Std'; color: ghostwhite" for="username">What is your name?</label>
+        <input style="width:30%;" class="form-control" type="text" id="username" th:field="*{userName}"/>
+    </div>
+    <div align="center" class="form-group">
+        <label style="font-family:'OCR A Std'; color: ghostwhite" for="password">What is your password?</label>
+        <input style="width:30%;" class="form-control" type="password" id="password" th:field="*{password}"/>
+    </div>
+    <div align="center">
+        <input style="font-family:'OCR A Std'" class="btn btn-success" type="submit" value="Give me access" />
+    </div>
+</form>
+</body>
+</html>
