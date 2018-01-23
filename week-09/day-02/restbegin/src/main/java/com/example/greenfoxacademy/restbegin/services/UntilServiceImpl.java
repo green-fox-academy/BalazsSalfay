@@ -6,31 +6,43 @@ import org.springframework.stereotype.Service;
 @Service
 public class UntilServiceImpl implements UntilService {
 
+  private Integer result;
+
+  public UntilServiceImpl() {
+  }
+
+  public Integer getResult() {
+    return result;
+  }
+
+  public void setResult(Integer result) {
+    this.result = result;
+  }
 
   @Override
   public void checkTheOperation(String what, Until until) {
     if (what.equals("sum")) {
-     sum(until.getUntil());
+     result = sum(until.getUntil());
     } else if (what.equals("factor")) {
-     factor(until.getUntil());
+     result = factor(until.getUntil());
     }
   }
 
   @Override
   public int factor(int input) {
-    int result = 0;
-    for (int i = 0; i < input; i++) {
-      result *= i;
+    int resultFactor = 1;
+    for (int i = 1; i <= input; i++) {
+      resultFactor *= i;
     }
-    return result;
+    return resultFactor;
   }
 
   @Override
   public int sum(int input) {
-    int result = 0;
-    for (int i = 0; i < input; i++) {
-      result += i;
+    int resultSum = 0;
+    for (int i = 0; i <= input; i++) {
+      resultSum += i;
     }
-    return result;
+    return resultSum;
   }
 }
