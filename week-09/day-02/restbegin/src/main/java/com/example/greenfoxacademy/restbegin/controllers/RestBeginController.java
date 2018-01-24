@@ -64,7 +64,7 @@ public class RestBeginController {
   }
 
   @PostMapping("/dountil/{what}")
-  public Object doUntil(@PathVariable String what, @RequestBody Until until) {
+  public Object doUntil(@PathVariable String what, @RequestBody (required = false) Until until) {
     if (until == null) {
       ErrorResponse error3 = new ErrorResponse();
       error3.setError("Please provide a number!");
