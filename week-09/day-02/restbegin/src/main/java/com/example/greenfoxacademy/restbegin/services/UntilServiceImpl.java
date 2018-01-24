@@ -11,6 +11,10 @@ public class UntilServiceImpl implements UntilService {
   public UntilServiceImpl() {
   }
 
+  public UntilServiceImpl(Integer result) {
+    this.result = result;
+  }
+
   public Integer getResult() {
     return result;
   }
@@ -20,11 +24,11 @@ public class UntilServiceImpl implements UntilService {
   }
 
   @Override
-  public void checkTheOperation(String what, Until until) {
+  public void checkTheOperation(String what, Integer input) {
     if (what.equals("sum")) {
-     result = sum(until.getUntil());
+     result = sum(input);
     } else if (what.equals("factor")) {
-     result = factor(until.getUntil());
+     result = factor(input);
     }
   }
 

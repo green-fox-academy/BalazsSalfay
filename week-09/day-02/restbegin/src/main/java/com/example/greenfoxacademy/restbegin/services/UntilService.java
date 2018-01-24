@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public interface UntilService {
 
-  void checkTheOperation(String what, Until until);
+  void checkTheOperation(String what, Integer input);
   int factor(int input);
   int sum(int input);
 }

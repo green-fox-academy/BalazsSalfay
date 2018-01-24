@@ -29,7 +29,7 @@ public class RestBeginController {
   @GetMapping("/doubling")
   public Object getDoubleValue(@RequestParam (value = "input", required = false) Integer received) {
     if (doubleServiceImpl.getTheDoubledValue(received)) {
-      return doubler1;
+        return doubler1;
     } else {
       errorResponse.setError("Please provide an input!");
       return errorResponse;
@@ -64,14 +64,16 @@ public class RestBeginController {
   }
 
   @PostMapping("/dountil/{what}")
-  public Object doUntil(@PathVariable String what, @RequestBody (required = false) Until until) {
-    if (until == null) {
+  public Object doUntil(@PathVariable String what, @RequestBody (required = false) UntilValue untilValue) {
+    if (untilValue == null) {
       ErrorResponse error3 = new ErrorResponse();
       error3.setError("Please provide a number!");
       return error3;
-    } else {
-      untilServiceImpl.checkTheOperation(what, until);
+    } else if (what.equals("sum") || what.equals("factor")) {
+      untilServiceImpl.checkTheOperation(what, untilValue.getUntil());
       return untilServiceImpl;
+    } else {
+      return new Error("Parameter is required");
     }
   }
 }

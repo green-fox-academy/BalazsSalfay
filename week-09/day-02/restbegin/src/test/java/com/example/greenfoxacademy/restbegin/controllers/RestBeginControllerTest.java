@@ -86,11 +86,24 @@ public class RestBeginControllerTest {
     mockMvc.perform(
             post("/dountil/sum")
             .contentType("application/json;charset=UTF-8")
-            .content({"\"until\": 8}")
+            .content("{\"until\": 8}")
             )
             .andExpect(status().isOk())
             .andExpect(content().contentType("application/json;charset=UTF-8"))
-            .andExpect(jsonPath("$.until", is()));
+            .andExpect(jsonPath("$.result", is(result)));
   }
 
+  @Test
+  public void testTheFactorOperation() throws Exception {
+    int until = 6;
+    int result = 720;
+    mockMvc.perform(
+            post("/dountil/factor")
+            .contentType("application/json;charset=UTF-8")
+            .content("{\"until\": 6}")
+            )
+            .andExpect(status().isOk())
+            .andExpect(content().contentType("application/json;charset=UTF-8"))
+            .andExpect(jsonPath("$.result", is(result)));
+  }
 }
