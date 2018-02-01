@@ -20,23 +20,32 @@ public class CandidateController {
   @Autowired
   CandidateFactory candidateFactory;
 
+  @Autowired
+  LoginController loginController;
+
   @GetMapping("/list")
   public String showMyCandidates(Model model) {
-    List<Candidate> candidates = candidateService.getAllCandidate();
-    model.addAttribute("candidates", candidates);
-    model.addAttribute("newCandidate", candidateFactory.getNewCandidate());
+    if (loginController.isPassword()) {
+      List<Candidate> candidates = candidateService.getAllCandidate();
+      model.addAttribute("candidates", candidates);
+      model.addAttribute("newCandidate", candidateFactory.getNewCandidate());
+    }
     return "candidate";
   }
 
   @PostMapping("/create")
   public String createNewCandidate(@ModelAttribute Candidate candidate) {
-    candidateService.create(candidate);
+    if (loginController.isPassword()) {
+      candidateService.create(candidate);
+    }
     return "redirect:/candidate/list";
   }
 
   @PostMapping("/delete/{candidateId}")
   public String deleteCandidate(@PathVariable int candidateId) {
-    candidateService.delete(candidateId);
+    if (loginController.isPassword()) {
+      candidateService.delete(candidateId);
+    }
     return "redirect:/candidate/list";
   }
 

@@ -39,7 +39,7 @@ public class CandidateServiceImpl implements CandidateService {
   }
 
   @Override
-  public List<Candidate> searchByName(String name) {
+  public List<Candidate> searchCandidateByName(String name) {
     return candidateRepository.findAllByNameContains(name);
   }
 }

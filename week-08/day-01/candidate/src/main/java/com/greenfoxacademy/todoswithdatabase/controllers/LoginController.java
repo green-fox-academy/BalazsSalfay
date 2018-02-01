@@ -18,6 +18,16 @@ public class LoginController {
   @Autowired
   UserServiceImpl userService;
 
+  private boolean password;
+
+  public boolean isPassword() {
+    return password;
+  }
+
+  public void setPassword(boolean password) {
+    this.password = password;
+  }
+
   @GetMapping("/login")
   public String showLoginPage(Model model) {
     User user = new User();

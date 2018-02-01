@@ -24,7 +24,7 @@ public class CandidateRestController {
   CandidateServiceImpl candidateServiceimpl;
 
   @GetMapping("/list")
-  public ResponseEntity listAllCandidates(@RequestBody Candidate candidate, BindingResult bindingResult) {
+  public ResponseEntity listAllCandidate(@RequestBody Candidate candidate, BindingResult bindingResult) {
     if (bindingResult.hasErrors()) {
       return ResponseEntity.badRequest().body(new ResultMessage("error"));
     } else {

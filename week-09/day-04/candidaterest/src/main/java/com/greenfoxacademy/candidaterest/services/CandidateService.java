@@ -13,6 +13,5 @@ public interface CandidateService {
   void update(Candidate candidate);
   void create(Candidate candidate);
   void delete(int id);
-  List<Candidate> searchByName(String name);
-
+  List<Candidate> searchCandidateByName(String name);
 }
