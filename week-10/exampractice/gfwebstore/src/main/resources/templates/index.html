@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
+    <title>Green Fox Web Store</title>
+</head>
+<body style="margin: 10px 20px 5px 20px">
+<h1 align="center">Green Fox Fashion Web Store</h1>
+<form class="input-group" th:action="@{/warehouse/summary}" th:object="${clothesDTO}" method="post">
+    <select th:field="${clothesDTO.itemName}">
+        <option value="">Select item name</option>
+        <option class="form-control"
+                th:each="clothes : ${distinctName}"
+                th:value="${clothes}"
+                th:text="${clothes}"/>
+    </select>
+    <select th:field="${clothesDTO.size}">
+        <option value="">Select size</option>
+        <option class="form-control" style="width:20%"
+                th:each="clothes : ${distinctSize}"
+                th:value="${clothes}"
+                th:text="${clothes}"/>
+    </select>
+    <input style="width:20%;" class="form-control" type="text" name="quantity" th:field="*{quantity}"/>
+    <input type="submit" class="btn btn-info" value="GET TOTAL"/>
+</form>
+<div class="table-responsive">
+    <table style="width:100%; margin-bottom: 20px" class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Item Name</th>
+            <th scope="col">Manufacturer</th>
+            <th scope="col">Category</th>
+            <th scope="col">Size</th>
+            <th scope="col">Unit Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr scope="row" th:each="clothes : ${listOfItems}" th:object="${clothes}">
+            <td th:text="*{itemName}"/>
+            <td th:text="*{manufacturer}"/>
+            <td th:text="*{category}"/>
+            <td th:text="*{size}"/>
+            <td th:text="*{price}"/>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<p th:text="${error}"/>
+</body>
+</html>

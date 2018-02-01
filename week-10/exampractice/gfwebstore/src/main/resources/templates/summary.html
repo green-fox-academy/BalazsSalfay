@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
+    <title>Green Fox Web Store</title>
+</head>
+<body>
+<h1 align="center" style="margin-top:20px">Green Fox Fashion Web Store</h1>
+<h2 align="center">Summary</h2>
+<table style="width:100%; margin-bottom: 20px" class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Item Name</th>
+        <th scope="col">Manufacturer</th>
+        <th scope="col">Category</th>
+        <th scope="col">Size</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Sub-Total Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr scope="row">
+        <td th:text="${clothes.itemName}"/>
+        <td th:text="${clothes.manufacturer}"/>
+        <td th:text="${clothes.category}"/>
+        <td th:text="${clothes.size}"/>
+        <td th:text="${quantity}"/>
+        <td th:text="${totalPrice}"/>
+    </tr>
+    </tbody>
+</table>
+<a href="/warehouse">Back to main</a>
+</body>
+</html>
