@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
+    <title>Licence Plate Database</title>
+</head>
+<body>
+<h1 align="center">Licence Plates</h1>
+<form th:action="@{/search/}" method="get">
+    <div class="input-group">
+        <input style="width:85%;" class="form-control" placeholder="Search for licence plates..." name="q" type="text"/>
+        <input type="submit" class="btn btn-info" value="Search"/>
+    </div>
+</form>
+<div>
+    <a th:href="@{/search?police=1}">Police cars only</a>
+    <a th:href="@{/search?diplomat=1}">Diplomats only</a>
+</div>
+<div class="table-responsive">
+    <table style="width:100%; margin-bottom: 20px" class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Licence Plate</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Model</th>
+            <th scope="col">Color</th>
+            <th scope="col">Year</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr scope="row" th:each="car : ${cars}" th:object="${car}">
+            <td th:text="*{plate}"/>
+            <td>
+                <a th:text="*{brand}" th:href="@{/search/} + *{brand}"></a>
+            </td>
+            <td th:text="*{model}"/>
+            <td th:text="*{color}"/>
+            <td th:text="*{year}"/>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<p th:text="${error}"/>
+</body>
+</html>
